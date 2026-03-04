@@ -19,7 +19,7 @@ const missions = [
   {
     id: "3-2",
     number: 2,
-    title: "내 잘못이다 - 네비게이터 마인드셋",
+    title: "내 잘못이다 - 사장님 마인드셋",
     subtitle: "책임감 있는 AI 활용",
     href: "/level/3/3-2",
     xp: 200,
@@ -69,7 +69,7 @@ export default function Level3Page() {
         </Badge>
         <h1 className="text-3xl font-bold">Level 3: 마스터의 길</h1>
         <p className="mt-2 text-muted-foreground">
-          맥락 제공과 네비게이터 마인드셋으로 진정한 AI 항해사가 됩니다.
+          맥락 제공과 사장님 마인드셋으로 진정한 AI 마스터가 됩니다.
         </p>
       </motion.div>
 

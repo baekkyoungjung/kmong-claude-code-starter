@@ -39,7 +39,7 @@ export default function Mission31Page() {
         xp={200}
         missionTitle="사전 인터뷰 - 맥락이 전부다"
         nextMissionHref="/level/3/3-2"
-        nextMissionLabel="미션 3-2: 네비게이터 마인드셋"
+        nextMissionLabel="미션 3-2: 사장님 마인드셋"
         onClose={() => setPhase("simulator")}
       />
     );

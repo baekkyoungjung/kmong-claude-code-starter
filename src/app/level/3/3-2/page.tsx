@@ -40,7 +40,7 @@ export default function Mission32Page() {
       <MissionComplete
         stars={stars}
         xp={200}
-        missionTitle="내 잘못이다 - 네비게이터 마인드셋"
+        missionTitle="내 잘못이다 - 사장님 마인드셋"
         nextMissionHref="/level/3"
         nextMissionLabel="Level 3 허브로 돌아가기"
         onClose={() => setPhase("philosophy")}
@@ -57,7 +57,7 @@ export default function Mission32Page() {
       >
         <p className="text-sm font-medium text-primary">Level 3 - 미션 2</p>
         <h1 className="mt-1 text-3xl font-bold">
-          내 잘못이다 - 네비게이터 마인드셋
+          내 잘못이다 - 사장님 마인드셋
         </h1>
       </motion.div>
 
@@ -67,7 +67,7 @@ export default function Mission32Page() {
           animate={{ opacity: 1 }}
           className="space-y-6"
         >
-          <ConceptCard title="네비게이터의 책임" icon="🧭">
+          <ConceptCard title="사장님의 책임" icon="🎯">
             <div className="space-y-3">
               <p>
                 AI가 기대에 못 미치는 결과를 내놓으면, 우리는 본능적으로
@@ -115,8 +115,8 @@ export default function Mission32Page() {
                   </p>
                   <p className="mt-1 text-muted-foreground">
                     결과의 책임은 항상 지시한 사람에게 있습니다.
-                    네비게이터가 방향을 잘못 잡으면 아무리 좋은 엔진이어도
-                    엉뚱한 곳에 도착합니다.
+                    지시가 부정확하면 아무리 좋은 AI도
+                    엉뚱한 결과를 냅니다.
                   </p>
                 </div>
               </div>

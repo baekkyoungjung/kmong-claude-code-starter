@@ -15,7 +15,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-sm">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2 font-bold">
-          <span className="text-lg">Kmong Agent Navigator</span>
+          <span className="text-lg">Agent Starter</span>
         </Link>
 
         <div className="flex items-center gap-4">

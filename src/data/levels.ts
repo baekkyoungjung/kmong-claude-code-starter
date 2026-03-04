@@ -3,7 +3,7 @@ import type { Level } from "@/lib/types";
 export const levels: Level[] = [
   {
     id: 1,
-    title: "첫 항해",
+    title: "첫 걸음",
     subtitle: "초급",
     description: "Claude Code의 기본 작동 원리와 프롬프트의 힘을 이해합니다.",
     requiredLevel: null,
@@ -67,7 +67,7 @@ export const levels: Level[] = [
     id: 3,
     title: "마스터의 길",
     subtitle: "고급",
-    description: "맥락 제공과 네비게이터 마인드셋으로 진정한 AI 항해사가 됩니다.",
+    description: "맥락 제공과 사장님 마인드셋으로 진정한 AI 마스터가 됩니다.",
     requiredLevel: 2,
     missions: [
       {
@@ -85,7 +85,7 @@ export const levels: Level[] = [
         id: "3-2",
         levelId: 3,
         missionNumber: 2,
-        title: "내 잘못이다 — 네비게이터 마인드셋",
+        title: "내 잘못이다 — 사장님 마인드셋",
         subtitle: "책임감 있는 AI 활용",
         description:
           "AI 결과가 구리면 AI가 멍청해서가 아니라 내가 맥락을 빠뜨려서입니다.",

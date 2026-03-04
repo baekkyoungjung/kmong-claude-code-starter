@@ -93,7 +93,7 @@ export default function LandingPage() {
               비개발자를 위한 인터랙티브 가이드
             </Badge>
             <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-              Kmong Agent Navigator
+              Agent Starter
             </h1>
             <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
               더이상 agent를 chatbot으로 쓰지마세요.
@@ -134,7 +134,7 @@ export default function LandingPage() {
                 size="lg"
                 onClick={() => track("cta_click", { action: "start" })}
               >
-                <Link href="/level/1">항해 시작하기</Link>
+                <Link href="/level/1">시작하기</Link>
               </Button>
             )}
           </motion.div>

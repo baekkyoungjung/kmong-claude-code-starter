@@ -15,10 +15,57 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://kmong-claude-code-starter.vercel.app";
+const TITLE = "Agent Starter";
+const DESCRIPTION =
+  "비개발자를 위한 Claude Code 인터랙티브 가이드. AI 에이전트를 제대로 부려먹는 법을 배우세요.";
+
 export const metadata: Metadata = {
-  title: "Kmong Agent Navigator",
-  description:
-    "비개발자를 위한 Claude Code 인터랙티브 가이드. AI 에이전트에게 방향을 지시하는 네비게이터가 되세요.",
+  title: {
+    default: TITLE,
+    template: `%s | ${TITLE}`,
+  },
+  description: DESCRIPTION,
+  keywords: [
+    "Claude Code",
+    "AI 가이드",
+    "비개발자",
+    "크몽",
+    "AI Native",
+    "프롬프트",
+    "에이전트",
+    "사장님 마인드셋",
+    "인터랙티브 튜토리얼",
+  ],
+  authors: [{ name: "AI Native Team — 크몽" }],
+  creator: "크몽 AI Native Team",
+  metadataBase: new URL(SITE_URL),
+  openGraph: {
+    type: "website",
+    locale: "ko_KR",
+    url: SITE_URL,
+    siteName: TITLE,
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [
+      {
+        url: "/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Agent Starter — 비개발자를 위한 Claude Code 가이드",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og-image.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

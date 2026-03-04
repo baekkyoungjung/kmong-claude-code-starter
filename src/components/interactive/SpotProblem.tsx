@@ -181,7 +181,7 @@ export function SpotProblem({
                 exit={{ opacity: 0 }}
                 className="rounded-lg bg-amber-500/10 p-3 text-center text-sm text-amber-700 dark:text-amber-400"
               >
-                다시 한번 생각해보세요. 힌트: 네비게이터의 관점에서 보세요.
+                다시 한번 생각해보세요. 힌트: 지시한 사람의 관점에서 보세요.
               </motion.div>
             )}
           </AnimatePresence>

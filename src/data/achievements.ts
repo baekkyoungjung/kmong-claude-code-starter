@@ -4,8 +4,8 @@ export const achievements: Achievement[] = [
   {
     id: "cadet",
     title: "Cadet",
-    description: "Level 1 '첫 항해' 완료",
-    icon: "⚓",
+    description: "Level 1 '첫 걸음' 완료",
+    icon: "🚀",
     condition: (state) =>
       ["1-1", "1-2"].every((id) => state.missionProgress[id]?.completed),
   },
