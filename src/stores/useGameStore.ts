@@ -4,6 +4,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { GameState, MissionProgress } from "@/lib/types";
 import { achievements } from "@/data/achievements";
+import { track } from "@vercel/analytics";
 
 interface GameActions {
   completeMission: (missionId: string, stars: number, xp: number) => void;
@@ -66,6 +67,23 @@ export const useGameStore = create<GameState & GameActions>()(
           missionProgress: newMissionProgress,
           unlockedBadges: [...state.unlockedBadges, ...newBadges],
         });
+
+        track("mission_complete", {
+          missionId,
+          stars,
+          xp,
+          totalXp: newXp,
+          totalCompleted: Object.values(newMissionProgress).filter(
+            (p) => p.completed
+          ).length,
+        });
+
+        if (newBadges.length > 0) {
+          track("badge_unlocked", {
+            badges: newBadges.join(","),
+            totalBadges: state.unlockedBadges.length + newBadges.length,
+          });
+        }
       },
 
       isLevelUnlocked: (levelId: number) => {

@@ -11,6 +11,7 @@ import { LevelCard } from "@/components/game/LevelCard";
 import { BadgeDisplay } from "@/components/game/BadgeDisplay";
 import { TOTAL_XP } from "@/lib/constants";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 
 const INITIAL_PROMPT = `비개발자 (특히 PO/PM/기획자/디자이너) 입장에서의 claude code 를 무작정 쓰는것이 아니라 정말 쉽게 가이드 해줄수있도록 페이지를 하나 만들어줘. vercel 배포 하고 싶어. 초급>중급>고급 정도로 3단계가 있고, 이게 뭔지 claude code가 어떤 원리인지 간략 초간략해서 설명하고, 그 다음은 skill, command 기능에 대한 설명 특히 skill 에 대해선 정말 이해하기 쉽게 비유방식으로 설명이 필요해. 그리고 고급 과정으로 mcp와 또 필요한 것들에 대해 가이드를 만들어줘. plan 모드의 중요성(claude code기능), plan md 문서의 중요성 (prd 를 기초로 기록용 plan md), 사전인터뷰를 통해 agent 가작업을 시작하기전에 정해진 기획, 디자인 가이드 사항들을 충분히 주는것이 얼마나 중요한지, 그리고 역으로 agent가 인간에게 질문하게 유도해야하는것이 중요한것.. 정말 중요한건 한번 딸깍 후 뭐야 왜이래? 왜이렇게 구려? 가 아니라 내 잘못이구나 내가 제대로 가이드를 못했구나 라고 생각하는 작업 방식이 정말 중요하다라는거.. 그리고 이걸 html 으로 만들거라서 단순히 그냥 알려주는게 아니라 게임처럼 했으면 좋겠어. 인터렉티브하게. 예를들어 옛날에 css flex 를 개구리 연못 게임으로 쉽게 이해하기 위한 사이트가 있었던것처럼.. 이런 게임 형태가 아니라 내 말은 뭔가 스크롤만 쭉쭉 내리는걸로 끝나는 교육자료로는 남고 싶지가 않아 대충 이해되? 지금 현재 우리 비개발자들은 어느상황이냐면 각자 claude code 를 깔았고, 대부분은 랜딩페이지나 static 페이지를 만들 수 있거나 자료조사, 리서치, 기획서 작성, 디자인 에셋 생성 정도는 충분히 사용할 줄 알아. 한번 어떤 식으로 하면 좋을지 계획 한번 잡아바줘`;
 
@@ -112,12 +113,27 @@ export default function LandingPage() {
                 <p className="text-sm text-muted-foreground">
                   {completedMissions}/{totalMissions} 미션 완료
                 </p>
-                <Button asChild size="lg" className="w-full">
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full"
+                  onClick={() =>
+                    track("cta_click", {
+                      action: "resume",
+                      completedMissions,
+                      xp,
+                    })
+                  }
+                >
                   <Link href={getResumeHref()}>이어서 하기</Link>
                 </Button>
               </div>
             ) : (
-              <Button asChild size="lg">
+              <Button
+                asChild
+                size="lg"
+                onClick={() => track("cta_click", { action: "start" })}
+              >
                 <Link href="/level/1">항해 시작하기</Link>
               </Button>
             )}
