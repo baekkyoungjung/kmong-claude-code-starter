@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://story.kmong.com";
+const SITE_URL = "https://kmong-claude-code-starter.vercel.app";
 const TITLE = "Agent Starter";
 const DESCRIPTION =
   "비개발자를 위한 Claude Code 인터랙티브 가이드. AI 에이전트를 제대로 부려먹는 법을 배우세요.";
